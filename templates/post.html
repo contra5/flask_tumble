@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{{ name }}</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <div class="media">
+                        {{ imgs|safe }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="media-body">
+                        {{ content|safe }}
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="affix">
+                    <div class="row">
+                        <p> {{ date }} </p>
+                        <p> {{ notes }} </p>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" id="prevBtn">Previous</button>
+                                <button class="btn btn-primary" id="nextBtn">Next</button>
+                            </div>
+                            <div class="slidecontainer">
+                                <p>Post Selector:</p>
+                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary" id="homeBtn">Home</button>
+                                <button class="btn btn-primary" id="rawBtn">Raw</button>
+                                <button class="btn btn-primary" id="lstBtn">List</button>
+                                <button class="btn btn-primary" id="taglstBtn">All Tags</button>
+                            </div>
+                        </div>
+                    <section> {{ tags | safe }} </section>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script> var true_post_num = {{ post_num }}</script>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/nav.js"></script>
+</html>
